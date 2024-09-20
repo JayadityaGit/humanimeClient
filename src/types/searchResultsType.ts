@@ -1,14 +1,14 @@
 interface resultsType{
-    id: string | null,
-    name: string | null,
-    jname: string | null,
-    poster: string | null,
-    duration: string | null,
-    type: string | null,
-    rating: string | null,
+    id: string,
+    name: string ,
+    jname: string ,
+    poster: string ,
+    duration: string,
+    type: string ,
+    rating: string ,
     episodes: {
-      sub: string | null,
-      dub: string | null,
+      sub: string ,
+      dub: string ,
     }
   }
 
