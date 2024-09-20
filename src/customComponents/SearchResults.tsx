@@ -1,6 +1,6 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Clock, Film, Star, Tv, Watch } from "lucide-react"
+import { Clock, Film, Star, Tv} from "lucide-react"
 import resultsType from "@/types/searchResultsType"
 import WatchComponent from "./Watch"
 import { useState } from "react"

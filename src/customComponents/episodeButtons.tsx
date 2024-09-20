@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import ButtonType from "@/types/ButtonType"
-import getStreams from "@/api/getStreams"
+
 import streamType from "@/types/streamType"
 import getServers from "@/api/getServers"
 
@@ -11,7 +11,7 @@ interface EpisodeButtonsProps{
    
 }
 
-const EpisodeButtons = ({buttons, streamSet}: EpisodeButtonsProps) => {
+const EpisodeButtons = ({buttons}: EpisodeButtonsProps) => {
 
 async function fetchServers(epId: string) {
     try {
