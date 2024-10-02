@@ -1,5 +1,5 @@
 import getStreams from "@/api/getStreams"
-import { Button } from "@/components/ui/button"
+
 import streamType from "@/types/streamType"
 
 interface dubsType{
@@ -36,7 +36,7 @@ const ServerButton = ({dubs, epId, streamSetter}: serverButtonProps) => {
       {
         dubs.map((value)=>{
             return(
-                <Button key={value.serverId} onClick={async()=>{await fetchStreams(value.serverName, epId)}}>{value.serverName}</Button>
+                <button key={value.serverId} onClick={async()=>{await fetchStreams(value.serverName, epId)}}>{value.serverName}</button>
             )
         })
       }

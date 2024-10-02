@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button"
 import ButtonType from "@/types/ButtonType"
-
 import streamType from "@/types/streamType"
 import getServers from "@/api/getServers"
 
@@ -20,7 +18,6 @@ async function fetchServers(epId: string) {
         if(!response){
             throw Error("could not fetch any servers on the anime")
         }        
-
         console.log(response.dub);
 
     } catch (error) {
@@ -31,11 +28,11 @@ async function fetchServers(epId: string) {
 
 
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-2 text-white">
+    <div className="">
         {
             buttons.map((value, index)=>{
                 return(
-                    <Button onClick={async()=>{fetchServers(value.episodeId)}} className={value.isFiller ? "bg-red-300": ""} key={index}>{value.number}</Button>
+                    <button onClick={async()=>{await fetchServers(value.episodeId)}} className="" key={index}>{value.number}</button>
                 )
             })
         }

@@ -1,6 +1,6 @@
 
 
-export default async function getStreams(episodeId: string, serverName: string) {
+export default async function getStreams(episodeId: string, serverName: string, category: string) {
 
     const url = import.meta.env.VITE_ANIME_URL
     
@@ -10,12 +10,11 @@ export default async function getStreams(episodeId: string, serverName: string) 
             throw Error("waiting for the episodeId")
         }
 
-        const response = await fetch(url+"/episode-srcs?id="+episodeId+"&category=dub"+"&server="+serverName)
+        const response = await fetch(url+"/episode-srcs?id="+episodeId+"&category="+category+"&server="+serverName)
+        
 
       
         const data = await response.json();
-
-        console.log(data)
 
         return data;
         
