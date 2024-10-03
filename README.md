@@ -15,7 +15,7 @@ humanime.in is designed to solve the problem of intrusive ads and costly subscri
 
 - **Frontend:** [React.js](https://reactjs.org/), [shadcn](https://shadcn.dev/)
 - **Backend:** [Node.js](https://nodejs.org/)
-- **Scraping:** [Cheerio](https://cheerio.js.org/)
+- **Scraping:** [ghoshRitesh12 (big shoutout !)](https://github.com/ghoshRitesh12/aniwatch-api)
 - **API Requests:** [Axios](https://axios-http.com/)
 - **Deployment:** [Vercel](https://vercel.com/)
 
