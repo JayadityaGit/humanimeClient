@@ -4,6 +4,9 @@ import SearchResults from "@/customComponents/SearchResults";
 import resultsType from "@/types/searchResultsType";
 import { useState } from "react"
 import { Input } from "@/components/ui/input";
+import { FaGithub } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+import { FaSmileBeam } from "react-icons/fa";
 
 export default function Searching() {
   const [animeToSearch, setAnimeToSearch] = useState("")
@@ -67,7 +70,23 @@ export default function Searching() {
 
           <div>
 
-          <SearchResults results={animeResults} />
+          {animeResults.length > 0 ? <SearchResults results={animeResults} />: 
+          
+          
+          <div className=" flex justify-center items-center flex-col space-y-5">
+
+            <div>
+              <a href="https://github.com/JayadityaGit/humanimeClient" target="_blank"><FaGithub className="text-3xl"/></a>
+            </div>
+
+            <div className="flex items-center space-x-1 justify-center">
+               <div>Jayaditya</div> <div><FaHeart className="text-lime-300"/></div> <div>opensource</div>.
+            </div>
+
+          </div>
+          
+          
+          }
 
           </div>
 
