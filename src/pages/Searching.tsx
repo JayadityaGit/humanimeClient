@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input";
 import { FaGithub } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
-import { FaSmileBeam } from "react-icons/fa";
+
 
 export default function Searching() {
   const [animeToSearch, setAnimeToSearch] = useState("")
