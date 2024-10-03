@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# **humanime.in** 🎥🎌
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Watch anime freely without ads, anytime, anywhere!**  
+[humanime.in](https://humanime-client-3a2m.vercel.app/search) is an ad-free anime streaming platform built with modern technologies to offer a smooth, user-friendly experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 **Project Overview**
 
-## Expanding the ESLint configuration
+humanime.in is designed to solve the problem of intrusive ads and costly subscriptions often associated with anime streaming platforms. By scraping publicly available anime content, it brings a clean and ad-free experience to anime lovers.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 **Tech Stack**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Frontend:** [React.js](https://reactjs.org/), [shadcn](https://shadcn.dev/)
+- **Backend:** [Node.js](https://nodejs.org/)
+- **Scraping:** [Cheerio](https://cheerio.js.org/)
+- **API Requests:** [Axios](https://axios-http.com/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 📋 **Features**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- 🎞️ **Ad-Free Streaming:** Watch anime without the interruption of ads.
+- 🖥️ **Responsive Design:** Enjoy the platform on any device—mobile, tablet, or desktop.
+- ⚡ **Fast Loading:** Optimized to provide fast and seamless content loading.
+- 🔍 **Anime Scraping:** Automatically scrapes the latest anime content from various sources.
+
+---
+
+
