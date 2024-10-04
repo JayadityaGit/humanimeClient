@@ -13,11 +13,11 @@ export default function SearchResults({ results }: SearchResultsProps) {
 
 
   return (
-<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-5">
+<div className="grid items-start grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-5">
 
 {results.map((result) => (
   <div 
-    className="border-solid border-2 border-black rounded-xl" 
+    className="border-solid border-2 border-black rounded-xl dark:border-white" 
     onClick={() => { Navigate("/stream", {state: result.id}) }} 
     key={result.id}
   >

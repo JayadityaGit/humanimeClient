@@ -40,7 +40,7 @@ export default function Searching() {
   }
 
   return (
-     <div className="p-6 space-y-6 lg:p-16">
+     <div className="p-6 space-y-6 lg:p-16 min-h-screen dark:bg-black dark:text-white ">
 
       <div className="space-y-5">
 
@@ -60,7 +60,7 @@ export default function Searching() {
                 if (e.key === "Enter") handleSearch()
               }}
             />
-            <button   onClick={handleSearch} className=" px-2 py-2 rounded-r-md text-sm bg-lime-300 font-semibold">
+            <button   onClick={handleSearch} className=" px-2 py-2 rounded-r-md text-sm bg-lime-300 font-semibold dark:text-black">
               search
             </button>
 
@@ -73,9 +73,9 @@ export default function Searching() {
           {animeResults.length > 0 ? <SearchResults results={animeResults} />: 
           
           
-          <div className=" flex justify-center items-center flex-col space-y-5">
+          <div className=" flex flex-col space-y-5">
 
-            <div>
+            <div className="flex justify-center">
               <a href="https://github.com/JayadityaGit/humanimeClient" target="_blank"><FaGithub className="text-3xl"/></a>
             </div>
 
