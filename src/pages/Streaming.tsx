@@ -27,14 +27,19 @@ const Streaming = () => {
   
   const [sub, setSub] = useState<miniServer[]>([]);
   const [dub, setDub] = useState<miniServer[]>([]);
+  const [raw, setRaw] = useState<miniServer[]>([]);
 
 
   const [sources, setSources] = useState<streamType[]>([])
   const [tracks, setTracks] = useState<trackType[]>([])
 
-  const [clickedSubServerButton, setClickedSubServerButton] = useState("")
 
+
+  const [clickedSubServerButton, setClickedSubServerButton] = useState("")
   const [clickedDubServerButton, setClickedDubServerButton] = useState("")
+  const [clickedRawServerButton, setClickedRawServerButton] = useState("")
+
+
 
   async function fetchServers(epId:string) {
     try {
@@ -54,6 +59,9 @@ const Streaming = () => {
          setDub(response.dub)
       }
       
+      if(response.raw.length > 0){
+        setRaw(response.raw)
+      }
 
     } catch (error) {
       
@@ -135,6 +143,34 @@ const Streaming = () => {
      
 
       <div className='server grid grid-cols-1 gap-y-3 '>
+
+      <div className='rawservers flex space-x-3 items-center'>
+             <div>
+               Raw
+             </div>
+
+             <div className='actualSubButtons flex space-x-2'>
+                 {
+                  raw.length !==0 ? raw.map((value)=>{
+                    return(
+                      <button className={clickedRawServerButton==value.serverName?'border px-2 py-1 rounded-md text-sm bg-lime-300 dark:text-black':'border px-2 py-1 rounded-md text-sm'} onClick={
+                        async()=>{
+                          await fetchStreams(episodeId, value.serverName, "raw"); 
+                          setClickedRawServerButton(value.serverName); 
+                          setClickedSubServerButton("")
+                          setClickedDubServerButton("")
+                        }} key={value.serverId}>{value.serverName}</button>
+                    )
+                  })
+
+                  :
+
+                  <p className=''>click an episode and the server button to stop getting rickrolled.</p>
+                 }
+             </div>
+
+          </div>
+
           <div className='subservers flex space-x-3 items-center'>
              <div>
                Sub
@@ -149,6 +185,7 @@ const Streaming = () => {
                           await fetchStreams(episodeId, value.serverName, "sub"); 
                           setClickedSubServerButton(value.serverName); 
                           setClickedDubServerButton("")
+                          setClickedRawServerButton("")
                         }} key={value.serverId}>{value.serverName}</button>
                     )
                   })
@@ -175,6 +212,7 @@ const Streaming = () => {
                             await fetchStreams(episodeId, value.serverName, "dub"); 
                             setClickedDubServerButton(value.serverName); 
                             setClickedSubServerButton("")
+                            setClickedRawServerButton("")
                           }} key={value.serverId}>{value.serverName}</button>
                       )
                     })

@@ -6,12 +6,15 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input";
 import { FaGithub } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import meme from "../assets/meme.jpg"
 
 
 export default function Searching() {
   const [animeToSearch, setAnimeToSearch] = useState("")
 
   const [animeResults, setAnimeResults] = useState<resultsType[]>([]);
+
+  const [memeTime, setMemeTime] = useState(false);
  
 
   const handleSearch = async () => {
@@ -20,6 +23,8 @@ export default function Searching() {
         if(!animeToSearch){
           throw Error("please provide an anime name")
         }
+
+        setMemeTime(true);
 
          const results = await fetch(import.meta.env.VITE_ANIME_URL+"/search?q="+animeToSearch, {method: "GET"});
 
@@ -31,8 +36,14 @@ export default function Searching() {
           );
           return;
         }
-         setAnimeResults(data.animes)
-         setAnimeToSearch("")
+
+        setTimeout(()=>{
+          setAnimeResults(data.animes)
+          setMemeTime(false);
+          setAnimeToSearch("")
+        }, 1500);
+
+
         
       } catch (error) {
         console.error(error)
@@ -70,10 +81,17 @@ export default function Searching() {
 
           <div>
 
-          {animeResults.length > 0 ? <SearchResults results={animeResults} />: 
+          {animeResults.length > 0 && memeTime == false? 
+          
+          
+          <SearchResults results={animeResults} />: 
+          
+
           
           
           <div className=" flex flex-col space-y-5">
+
+            
 
             <div className="flex justify-center">
               <a href="https://github.com/JayadityaGit/humanimeClient" target="_blank"><FaGithub className="text-3xl"/></a>
@@ -86,6 +104,10 @@ export default function Searching() {
           </div>
           
           
+          }
+
+          {
+            memeTime  && <img src={meme} alt="memeImage" />
           }
 
           </div>
